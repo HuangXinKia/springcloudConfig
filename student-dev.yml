@@ -1,5 +1,5 @@
 server:
-  port: 8456
+  port: 8457
 spring:
   application:
     name: spring-mybatis
