@@ -1,0 +1,23 @@
+server:
+  port: 8067
+
+spring:
+  application:
+    name: clsinfo
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8069/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: hystrix.stream
