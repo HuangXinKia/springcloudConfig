@@ -1,0 +1,16 @@
+server:
+  port: 8069
+eureka:
+  instance:
+    hostname: 127.0.0.1 #eureka服务端实例
+
+  client:
+    service-url:
+      defaultZone:  http://127.0.0.1:8069/eureka/  #客户端回调地址
+    register-with-eureka: false #是否将自己注册进注册中心【由于是服务端，所以不需要，但是如果做集群的话，就需要为true】
+    fetch-registry: false	#是否从注册中心获取内容【由于是服务端，所以不需要，但是如果做集群的话，就需要为true】
+
+  server:
+    #关闭自我保护机制，保证不可用服务即时剔除
+    enable-self-preservation: false #禁用自我保护
+    eviction-interval-timer-in-ms: 2000 #心跳发送时间
